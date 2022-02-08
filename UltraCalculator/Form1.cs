@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UltraCalculator
@@ -13,10 +6,10 @@ namespace UltraCalculator
     public partial class Form1 : Form
     {
 
-        private int input;
-        private int value;
-        private int result;
-        private short opr;
+        private int input; // Введенное число
+        private int value; // Сохраненное число
+        private int result; // Результат операции
+        private short opr; // Номер оператора
 
 
 
@@ -26,62 +19,27 @@ namespace UltraCalculator
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+
+
+
+        private void btn_Click(object sender, EventArgs e) // Кнопка цифры
         {
 
-        }
-
-
-
-
-
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-
-            var text = ((Button)sender).Text;
+            var text = ((Button)sender).Text; // ((Button)sender) возвращает нажатую кнопку, поэтому у всех кнопок после клика вызывается этот метод
             inputBx.Text += text;
         }
 
-        private void btnEq_Click(object sender, EventArgs e)
-        {
-            input = int.Parse(inputBx.Text);
-            
-            switch (opr)
-            {
 
-                case 1:
-                    label.Text = $"{value.ToString()} + {input.ToString()}";
-                    result = value + input; 
-                    break;
-                case 2:
-                    label.Text = $"{value.ToString()} - {input.ToString()}";
-                    result = value - input;
-                    break;
-                case 3:
-                    label.Text = $"{value.ToString()} * {input.ToString()}";
-                    result = value * input;
-                    break;
-                case 4:
-                    label.Text = $"{value.ToString()} / {input.ToString()}";
-                    result = value / input;
-                    break;
-
-            }
-
-            inputBx.Text = result.ToString();
-
-        }
-
-        private void operator_Click(object sender, EventArgs e)
+        private void operator_Click(object sender, EventArgs e) // Кнопка операторов
         {
 
-            switch (((Button)sender).Text) 
+            switch (((Button)sender).Text) // По тексту кнопки определяет шо це за оператор и присваивает переменной opr его номер*
             {
 
                 case "+": 
                     value = int.Parse(inputBx.Text);
-                    opr = 1;
+                    opr = 1; // *Вот тут
                     label.Text = $"{inputBx.Text} +";
                     inputBx.Text = "";
                     break;
@@ -110,8 +68,37 @@ namespace UltraCalculator
             }
 
         }
+        private void btnEq_Click(object sender, EventArgs e) // Кнопка Равно
+        {
+            input = int.Parse(inputBx.Text);
+            
+            switch (opr)  // Выбор оператора 
+            {
 
-        private void ClearAll(object sender, EventArgs e)
+                case 1:
+                    label.Text = $"{value.ToString()} + {input.ToString()}";
+                    result = value + input; 
+                    break;
+                case 2:
+                    label.Text = $"{value.ToString()} - {input.ToString()}";
+                    result = value - input;
+                    break;
+                case 3:
+                    label.Text = $"{value.ToString()} * {input.ToString()}";
+                    result = value * input;
+                    break;
+                case 4:
+                    label.Text = $"{value.ToString()} / {input.ToString()}";
+                    result = value / input;
+                    break;
+
+            }
+
+            inputBx.Text = result.ToString();
+
+        }
+
+        private void ClearAll(object sender, EventArgs e) // Кнопка Очистить
         {
 
             inputBx.Text = "";
