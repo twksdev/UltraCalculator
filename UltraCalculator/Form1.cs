@@ -17,7 +17,6 @@ namespace UltraCalculator
         private int value;
         private int result;
         private short opr;
-        //private string valueStr;
 
 
 
