@@ -51,6 +51,7 @@ namespace UltraCalculator
             this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.buttonPM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -190,9 +191,9 @@ namespace UltraCalculator
             // 
             this.buttonPl.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPl.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPl.Location = new System.Drawing.Point(200, 195);
+            this.buttonPl.Location = new System.Drawing.Point(200, 249);
             this.buttonPl.Name = "buttonPl";
-            this.buttonPl.Size = new System.Drawing.Size(55, 102);
+            this.buttonPl.Size = new System.Drawing.Size(55, 48);
             this.buttonPl.TabIndex = 14;
             this.buttonPl.Text = "+";
             this.buttonPl.UseVisualStyleBackColor = false;
@@ -226,7 +227,7 @@ namespace UltraCalculator
             // 
             this.buttonMn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonMn.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonMn.Location = new System.Drawing.Point(261, 141);
+            this.buttonMn.Location = new System.Drawing.Point(200, 195);
             this.buttonMn.Name = "buttonMn";
             this.buttonMn.Size = new System.Drawing.Size(55, 48);
             this.buttonMn.TabIndex = 17;
@@ -281,11 +282,24 @@ namespace UltraCalculator
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.btn_Click);
             // 
+            // buttonPM
+            // 
+            this.buttonPM.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonPM.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPM.Location = new System.Drawing.Point(261, 141);
+            this.buttonPM.Name = "buttonPM";
+            this.buttonPM.Size = new System.Drawing.Size(55, 48);
+            this.buttonPM.TabIndex = 21;
+            this.buttonPM.Text = "+/-";
+            this.buttonPM.UseVisualStyleBackColor = false;
+            this.buttonPM.Click += new System.EventHandler(this.buttonPM_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 314);
+            this.Controls.Add(this.buttonPM);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.buttonCC);
@@ -337,6 +351,7 @@ namespace UltraCalculator
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button buttonPM;
     }
 }
 

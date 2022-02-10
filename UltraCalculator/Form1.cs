@@ -9,7 +9,7 @@ namespace UltraCalculator
         private double input; // Введенное число
         private double value; // Сохраненное число
         private double result; // Результат операции
-        private byte opr; // Номер оператора
+        private byte opr = 0; // Номер оператора
 
 
 
@@ -30,9 +30,22 @@ namespace UltraCalculator
 
         private void btn_Click(object sender, EventArgs e) // Кнопка цифры
         {
+            if( ((Button)sender).Text.Equals(",") && inputBx.Text.Equals(""))
+            {
 
-            var text = ((Button)sender).Text; // ((Button)sender) возвращает нажатую кнопку, поэтому у всех кнопок после клика вызывается этот метод
-            inputBx.Text += text;
+                var text = ((Button)sender).Text; 
+
+                inputBx.Text = $"0{text}";
+
+            }
+            else
+            {
+
+                var text = ((Button)sender).Text; // ((Button)sender) возвращает нажатую кнопку, поэтому у всех кнопок после клика вызывается этот метод
+
+                inputBx.Text += text;
+
+            }
         }
 
 
@@ -75,7 +88,7 @@ namespace UltraCalculator
         }
         private void btnEq_Click(object sender, EventArgs e) // Кнопка Равно
         {
-            input = int.Parse(inputBx.Text);
+            input = double.Parse(inputBx.Text);
             
             switch (opr)  // Выбор оператора 
             {
@@ -100,6 +113,7 @@ namespace UltraCalculator
             }
 
             inputBx.Text = result.ToString();
+            opr = 0;
 
         }
 
@@ -112,6 +126,32 @@ namespace UltraCalculator
             value = 0;
             result = 0;
 
+        }
+
+        private void buttonPM_Click(object sender, EventArgs e)
+        {
+
+            if (inputBx.Text.Equals(""))
+            {
+                return;
+            }
+            else
+            {
+
+               if (!inputBx.Text.Contains("-"))
+               {
+
+                    inputBx.Text = "-" + inputBx.Text;
+
+               }
+               else if (inputBx.Text.Contains("-"))
+               {
+
+                    inputBx.Text = inputBx.Text.Replace("-", "");
+
+               }
+               
+            }
         }
     }
 }
