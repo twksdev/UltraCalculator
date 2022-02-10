@@ -6,10 +6,10 @@ namespace UltraCalculator
     public partial class Form1 : Form
     {
 
-        private int input; // Введенное число
-        private int value; // Сохраненное число
-        private int result; // Результат операции
-        private short opr; // Номер оператора
+        private double input; // Введенное число
+        private double value; // Сохраненное число
+        private double result; // Результат операции
+        private byte opr; // Номер оператора
 
 
 
@@ -17,6 +17,11 @@ namespace UltraCalculator
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -38,28 +43,28 @@ namespace UltraCalculator
             {
 
                 case "+": 
-                    value = int.Parse(inputBx.Text);
+                    value = double.Parse(inputBx.Text);
                     opr = 1; // *Вот тут
                     label.Text = $"{inputBx.Text} +";
                     inputBx.Text = "";
                     break;
 
                 case "-": 
-                    value = int.Parse(inputBx.Text);
+                    value = double.Parse(inputBx.Text);
                     opr = 2;
                     label.Text = $"{inputBx.Text} -";
                     inputBx.Text = "";
                     break;
 
                 case "x": 
-                    value = int.Parse(inputBx.Text);
+                    value = double.Parse(inputBx.Text);
                     opr = 3;
                     label.Text = $"{inputBx.Text} *";
                     inputBx.Text = "";
                     break;
 
                 case "/": 
-                    value = int.Parse(inputBx.Text);
+                    value = double.Parse(inputBx.Text);
                     opr = 4;
                     label.Text = $"{inputBx.Text} /";
                     inputBx.Text = "";

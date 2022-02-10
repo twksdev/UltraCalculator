@@ -50,6 +50,7 @@ namespace UltraCalculator
             this.buttonCC = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -179,7 +180,7 @@ namespace UltraCalculator
             this.button00.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button00.Location = new System.Drawing.Point(78, 249);
             this.button00.Name = "button00";
-            this.button00.Size = new System.Drawing.Size(116, 48);
+            this.button00.Size = new System.Drawing.Size(55, 48);
             this.button00.TabIndex = 13;
             this.button00.Text = "00";
             this.button00.UseVisualStyleBackColor = true;
@@ -268,11 +269,24 @@ namespace UltraCalculator
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.operator_Click);
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button11.Location = new System.Drawing.Point(139, 249);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(55, 48);
+            this.button11.TabIndex = 20;
+            this.button11.Text = ",";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 314);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.buttonCC);
             this.Controls.Add(this.buttonMn);
@@ -322,6 +336,7 @@ namespace UltraCalculator
         private System.Windows.Forms.Button buttonCC;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 
